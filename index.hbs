@@ -1,0 +1,21 @@
+{{!< default}}
+
+
+{{#foreach posts}}
+
+<article class="{{post_class}}">
+
+    <h1><a href="{{url}}">{{title}}</a></h1>
+
+    <div class="post-content"><p>{{content words=50}}&hellip;</p><a href="{{url}}"">查看全文</a></div>
+    {{#if tags}}
+                    <i class="fa fa-tag fa-lg b-link-green"></i>
+                    {{#foreach tags}}
+                    <a href="{{url}}"><span class="b-chip">{{name}}</span></a>
+                    {{/foreach}}
+                    {{/if}}
+</article>
+
+{{/foreach}}
+
+{{pagination}}
